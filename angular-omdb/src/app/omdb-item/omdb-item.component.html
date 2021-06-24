@@ -1,0 +1,71 @@
+<div class="omdb-item">
+  <h2>{{omdbItem.Title}}</h2>
+  <img src="{{omdbItem.Poster}}" alt="{{omdbItem.Title}} poster">
+  <button
+    *ngIf="!detailsAreShowed"
+    type="button"
+    (click)="moreDetails(omdbItem.imdbID)"
+    class="btn btn-secondary"
+    >Show details
+  </button>
+
+  <div class="omdb-item__details" *ngIf="detailsAreShowed && omdbItem.details">
+    <ul>
+      <li>
+        <h3>Genre</h3>
+        <span>{{omdbItem.details.Genre}}</span>
+      </li>
+      <li>
+        <h3>Released</h3>
+        <span>{{omdbItem.details.Released}}</span>
+      </li>
+      <li>
+        <h3>Language</h3>
+        <span>{{omdbItem.details.Language}}</span>
+      </li>
+      <li>
+        <h3>Country</h3>
+        <span>{{omdbItem.details.Country}}</span>
+      </li>
+      <li>
+        <h3>Plot</h3>
+        <span>{{omdbItem.details.Plot}}</span>
+      </li>
+      <li>
+        <h3>Runtime</h3>
+        <span>{{omdbItem.details.Runtime}}</span>
+      </li>
+      <li>
+        <h3>Director</h3>
+        <span>{{omdbItem.details.Director}}</span>
+      </li>
+      <li>
+        <h3>Writer</h3>
+        <span>{{omdbItem.details.Writer}}</span>
+      </li>
+      <li>
+        <h3>Actors</h3>
+        <span>{{omdbItem.details.Actors}}</span>
+      </li>
+      <li>
+        <h3>Awards</h3>
+        <span>{{omdbItem.details.Awards}}</span>
+      </li>
+      <li>
+        <h3>Ratings</h3>
+        <div *ngFor="let rate of omdbItem.details.Ratings">
+          <h4>{{rate.Source}}</h4>
+          <span>{{rate.Value}}</span>
+        </div>
+      </li>
+    </ul>
+
+    <button
+      type="button"
+      class="btn btn-secondary"
+      (click)="lessDetails($event)"
+      >Hide details
+    </button>
+  </div>
+
+</div>

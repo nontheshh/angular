@@ -1,0 +1,43 @@
+<div *ngIf="responseData; else loading">
+
+  <div *ngIf="responseData.Search; else nothingFound">
+
+    <div class="omdb-items-page">
+
+      <app-omdb-item   *ngFor="let omdbItem of responseData.Search
+          | paginate: {
+            id: 'omdb-list-pagination',
+            totalItems: +responseData.totalResults,
+            itemsPerPage: 10,
+            currentPage: +currentSearchData.page
+          }"
+          [omdbItem]="omdbItem"
+      >
+      </app-omdb-item>
+
+    </div>
+
+    <div class="pagination">
+      <pagination-controls
+        id="omdb-list-pagination"
+        previousLabel="<--"
+        nextLabel="-->"
+        maxSize="5"
+        directionLinks="true"
+        (pageChange)="goToPage($event)"
+        ></pagination-controls>
+    </div>
+
+  </div>
+
+  <ng-template #nothingFound>
+    <div class="container-error">
+      <span>{{responseData.Error}}</span>
+    </div>
+  </ng-template>
+
+</div>
+
+<ng-template #loading>
+  <span>loading...</span>
+</ng-template>

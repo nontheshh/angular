@@ -1,0 +1,20 @@
+.search-result{
+  padding: 40px;
+}
+ul{
+  list-style: none;
+  max-width: 400px;
+  margin: 5px 0;
+  padding: 0;
+}
+
+li{
+  background-color: lightgray;
+  border: 1px solid #000;
+}
+a{
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  color: #000;
+}

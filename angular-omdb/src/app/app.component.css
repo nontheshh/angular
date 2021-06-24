@@ -1,0 +1,28 @@
+header{
+  min-height: 10vh;
+}
+
+section{
+  background-color: #707d8b;
+  min-height: 70vh;
+}
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20vh;
+  background-color:#343a40;
+  width: 80%;
+  margin: 0 auto;
+}
+
+button, input, optgroup, select, textarea {
+  margin: 10px;
+}
+
+.footer-content{
+  text-align: center;
+  font-size: 40px;
+  color: #fff;
+  font-weight: bold;
+}

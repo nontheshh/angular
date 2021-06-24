@@ -1,0 +1,12 @@
+<div class="nav-btns">
+  <ul>
+    <li><a class="button" routerLink="">Home</a></li>
+    <li><a class="button" routerLink="largest-things">largest things</a></li>
+    <li><a class="button" routerLink="smallest-things">smallest things</a></li>
+    <li><a class="button" routerLink="about">about</a></li>
+  </ul>
+  <form class="search-form">
+    <input (input)="inputHandler($event)" type="text">
+    <button type="button" (click)="buttonHandler($event)">Search</button>
+  </form>
+</div>

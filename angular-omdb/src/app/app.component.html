@@ -1,0 +1,33 @@
+<main class="container col-md-10">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <form class="form-inline my-2">
+        <input
+          name="filmName"
+          class="form-control mr-sm-2"
+          type="search()"
+          placeholder="Title"
+          [(ngModel)]="searchData.s"
+        >
+        <select class="form-control" (change)="handleTypeSelect($event)">
+          <option selected value="movie">Movie</option>
+          <option value="series">Series</option>
+          <option value="episode">Episode</option>
+        </select>
+        <button
+          class="btn btn-outline-info my-2 my-sm-0"
+          type="button"
+          (click)="onSearch()"
+        >Search</button>
+      </form>
+    </nav>
+  </header>
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+</main>
+<footer>
+  <div class="footer-content">
+    footer
+  </div>
+</footer>

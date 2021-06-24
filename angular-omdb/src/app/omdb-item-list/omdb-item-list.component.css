@@ -1,0 +1,13 @@
+.omdb-items-page{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #707d8b;
+}
+
+.container-error{
+  text-align: center;
+  color: red;
+  font-size: 40px;
+}

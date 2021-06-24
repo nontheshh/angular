@@ -1,0 +1,13 @@
+<div class="layout">
+  <nav class='sidebar'>
+    <ul *ngFor="let thing of things" >
+      <li>
+        <a [routerLink]="[thing.url]">{{thing.name}}</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
